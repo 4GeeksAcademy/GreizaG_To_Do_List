@@ -5,3 +5,12 @@ h1 {
 h3 {
     color: grey;
 }
+
+li {
+    list-style-type: none;
+    background-color: #efeaf2;
+}
+
+ul {
+    padding: 0;
+}
