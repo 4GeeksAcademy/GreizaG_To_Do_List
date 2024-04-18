@@ -8,9 +8,27 @@ h3 {
 
 li {
     list-style-type: none;
-    background-color: #efeaf2;
+    background-color: #e3d6ea;
+    border-top: solid;
+    border-bottom: solid;
+    border-color: #dadadb;
+    border-radius: 2;
+    color:#8067d8
 }
 
 ul {
     padding: 0;
+}
+
+p {
+    color: grey;
+    font-size: 10px;
+}
+
+.task .fa-regular{
+    visibility: hidden;
+}
+
+.task:hover .fa-regular{
+    visibility: visible;
 }

@@ -4,9 +4,8 @@ const Home = () => {
 	const [toDos, setToDos] = useState("");
 	const [toDoList, setToDoList] = useState([])
 	const addNewTask = () => {
-		setToDoList ([...toDoList, toDos])
+		setToDoList([...toDoList, toDos])
 	}
-	console.log(toDoList)
 
 	return (
 		<div className="m-5 row justify-content-center">
@@ -17,7 +16,7 @@ const Home = () => {
 					<input type="text" className="form-control mb-3" placeholder="New Task"
 						style={{ color: "#e090b9" }}
 						onChange={(e) => setToDos(e.target.value)}
-						onKeyDown = {(e) => {
+						onKeyDown={(e) => {
 							if (e.key === "Enter") {
 								addNewTask()
 							}
@@ -26,12 +25,24 @@ const Home = () => {
 				</div>
 
 				<div>
-					<ul>
-						{toDoList.map((value,index) => {
-							return <li key={index}>{value}</li>
+					<ul className="list-group">
+						{toDoList.map((value, index) => {
+							return <li className="list-group-item" style={{ color: "#8067d8" }}
+								key={index}>
+								<div className="task d-flex justify-content-between">
+									<span>{value}</span>
+									<div>
+										<i className="fa-regular fa-trash-can fs-6 ms-auto"
+											onClick={() => {
+												setToDoList(toDoList.filter((task) => task != value))
+											}}></i>
+									</div>
+								</div>
+							</li>
 						})}
-					</ul><br/>
+					</ul><br />
 				</div>
+				<p className="ms-3">{toDoList.length} Tasks</p>
 			</div>
 		</div>
 	);
